@@ -6,11 +6,13 @@ const Footer = () => {
             as="footer"
             bg="#02689D"
             p={5}
+            h="80px"
             color="#fff"
             align="center"
             justify="center"
-            position="static"
-            bottom={0}
+            position="relative"
+            bottom="0"
+            w="100%"
         >
             <Flex direction="column" align="center">
                 <Text fontSize="lg" fontWeight="bold">

@@ -6,7 +6,7 @@ export default function Layout({
   children
 }) {
   return (
-    <div>
+    <>
       <Head>
         <title>Aposta esperta</title>
         <meta charSet="utf-8" />
@@ -19,6 +19,6 @@ export default function Layout({
       {children}
 
       <Footer/>
-    </div>
+    </>
   )
 }
