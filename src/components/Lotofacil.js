@@ -113,7 +113,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={5} spacing={5}>
                                     {resultado_fixar.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green" defaultIsChecked>
+                                        <Checkbox key={index} colorScheme="green">
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -147,7 +147,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={2} spacing={5}>
                                     {soma.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green" defaultIsChecked>
+                                        <Checkbox key={index} colorScheme="green">
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -181,7 +181,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {linha.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green" defaultIsChecked>
+                                        <Checkbox key={index} colorScheme="green">
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -215,7 +215,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {coluna.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green" defaultIsChecked>
+                                        <Checkbox key={index} colorScheme="green">
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -249,7 +249,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {par_impar.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green" defaultIsChecked>
+                                        <Checkbox key={index} colorScheme="green">
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -283,7 +283,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {repetido.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green" defaultIsChecked>
+                                        <Checkbox key={index} colorScheme="green">
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -317,7 +317,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {primo_cruz.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green" defaultIsChecked>
+                                        <Checkbox key={index} colorScheme="green">
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -351,7 +351,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {primo_cruz.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green" defaultIsChecked>
+                                        <Checkbox key={index} colorScheme="green">
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -385,7 +385,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {fibonacci.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green" defaultIsChecked>
+                                        <Checkbox key={index} colorScheme="green">
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -419,7 +419,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {xis.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green" defaultIsChecked>
+                                        <Checkbox key={index} colorScheme="green">
                                             {item}
                                         </Checkbox>
                                     ))}
