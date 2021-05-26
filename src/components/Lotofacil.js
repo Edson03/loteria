@@ -1,54 +1,143 @@
 import { useState} from 'react'
-import { Box, SimpleGrid, Center, CheckboxGroup, Checkbox, Flex, Button } from "@chakra-ui/react"
-
-import { useFormik } from 'formik'
+import { Box, SimpleGrid, Center, CheckboxGroup, Checkbox, Flex, Button, Textarea } from "@chakra-ui/react"
 
 
-const resultado_fixar = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25']
-const soma = ['184 à 199', '200 à 215', '168 à 183', '216 à 231', '152 à 167', '232 à 247', '136 à 151', '120 à 135', '264 à 270', '248 à 263']
-const linha = [43332, 44322, 44331, 53322, 54321, 44421, 33333, 54222, 53331, 44430, 54411, 54330, 54420, 55221, 55311, 55320, 55500, 55410]
-const coluna = [43332, 44322, 44331, 53322, 54321, 44421, 33333, 54222, 53331, 54330, 54411, 55221, 54420, 44430, 55320, 55311, 55500, 55410]
-const par_impar = ['7 8', '8 7', '6 9', '9 6', '5 10', '10 5', '4 11', '11 4', '3 12', '2 13', '12 3']
-const repetido = ['05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15']
-const primo_cruz = ['01', '02', '03', '04', '05', '06', '07', '08', '09']
-const fibonacci = ['01', '02', '03', '04', '05', '06', '07']
-const xis = ['02', '03', '04', '05', '06', '07', '08', '09']
+let array_resultado = []
+let array_fixarNumeros = []
+let array_soma = []
+let array_linha = []
+let array_coluna = []
+let array_par = []
+let array_repetido = []
+let array_primo = []
+let array_fibonacci = []
+let array_cruz = []
+let array_xis = []
 
-const validate = values => {
-    const errors = {};
-  
-    if (!values.firstName) {
-      errors.firstName = 'Required';
-    } else if (values.firstName.length > 15) {
-      errors.firstName = 'Must be 15 characters or less';
+const onResultadoChange = (e) => {
+    let value = e.target.value
+    if (array_resultado.includes(value) && !e.target.checked) {
+        array_resultado.splice( array_resultado.indexOf(value), 1 );
+    } else if (!array_resultado.includes(value) && e.target.checked) {
+        array_resultado.push(value)
     }
-  
-    return errors;
-};
+}
 
+const onFixarNumerosChange = (e) => {
+    let value = e.target.value
+    if (array_fixarNumeros.includes(value) && !e.target.checked) {
+        array_fixarNumeros.splice( array_fixarNumeros.indexOf(value), 1 );
+    } else if (!array_fixarNumeros.includes(value) && e.target.checked) {
+        array_fixarNumeros.push(value)
+    }
+}
 
-const Lotofacil = () => {
+const onSomaChange = (e) => {
+    let value = e.target.value
+    if (array_soma.includes(value) && !e.target.checked) {
+        array_soma.splice( array_soma.indexOf(value), 1 );
+    } else if (!array_soma.includes(value) && e.target.checked) {
+        array_soma.push(value)
+    }
+}
 
-    const formik = useFormik({
-        initialValues: {
-          resultado: []
-        },
-        onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
-        },
-    });
+const onLinhaChange = (e) => {
+    let value = e.target.value
+    if (array_linha.includes(value) && !e.target.checked) {
+        array_linha.splice( array_linha.indexOf(value), 1 );
+    } else if (!array_linha.includes(value) && e.target.checked) {
+        array_linha.push(value)
+    }
+}
 
+const onColunaChange = (e) => {
+    let value = e.target.value
+    if (array_coluna.includes(value) && !e.target.checked) {
+        array_coluna.splice( array_coluna.indexOf(value), 1 );
+    } else if (!array_coluna.includes(value) && e.target.checked) {
+        array_coluna.push(value)
+    }
+}
 
+const onParImparChange = (e) => {
+    let value = e.target.value
+    if (array_par.includes(value) && !e.target.checked) {
+        array_par.splice( array_par.indexOf(value), 1 );
+    } else if (!array_par.includes(value) && e.target.checked) {
+        array_par.push(value)
+    }
+}
+
+const onRepetidoChange = (e) => {
+    let value = e.target.value
+    if (array_repetido.includes(value) && !e.target.checked) {
+        array_repetido.splice( array_repetido.indexOf(value), 1 );
+    } else if (!array_repetido.includes(value) && e.target.checked) {
+        array_repetido.push(value)
+    }
+}
+
+const onPrimoChange = (e) => {
+    let value = e.target.value
+    if (array_primo.includes(value) && !e.target.checked) {
+        array_primo.splice( array_primo.indexOf(value), 1 );
+    } else if (!array_primo.includes(value) && e.target.checked) {
+        array_primo.push(value)
+    }
+}
+
+const onFibonacciChange = (e) => {
+    let value = e.target.value
+    if (array_fibonacci.includes(value) && !e.target.checked) {
+        array_fibonacci.splice( array_fibonacci.indexOf(value), 1 );
+    } else if (!array_fibonacci.includes(value) && e.target.checked) {
+        array_fibonacci.push(value)
+    }
+}
+
+const onCruzChange = (e) => {
+    let value = e.target.value
+    if (array_cruz.includes(value) && !e.target.checked) {
+        array_cruz.splice( array_cruz.indexOf(value), 1 );
+    } else if (!array_cruz.includes(value) && e.target.checked) {
+        array_cruz.push(value)
+    }
+}
+
+const onXisChange = (e) => {
+    let value = e.target.value
+    if (array_xis.includes(value) && !e.target.checked) {
+        array_xis.splice( array_xis.indexOf(value), 1 );
+    } else if (!array_xis.includes(value) && e.target.checked) {
+        array_xis.push(value)
+    }
+}
+
+const sendData = () => {
+    console.log(array_resultado)
+    console.log(array_fixarNumeros)
+    console.log(array_soma)
+    console.log(array_linha)
+    console.log(array_coluna)
+    console.log(array_par)
+    console.log(array_repetido)
+    console.log(array_primo)
+    console.log(array_fibonacci)
+    console.log(array_cruz)
+    console.log(array_xis)
+}
+
+const Lotofacil = (object) => {
+
+    const [resultado_fixar,soma,linha,coluna,par_impar,repetido,primo_cruz,fibonacci,xis] = object.data
+    
     return (
-        
-        <Flex w="100%"  mt={5} mb={5} justify="center">
-            
+        <Flex w="100%"  mt={5} mb={5} justify="center"> 
             <Box
                 w={{ base: "100%", md: "100%", xl: "80%" }}
                 overflow="hidden"
                 justify="center"
             >
-                <form onSubmit={formik.handleSubmit}>
                 <Flex w="100%" justify="center">
                     <SimpleGrid columns={[1, 1, 2, 3]} rows="auto" spacing={5} >
                         <Box w="300px" >
@@ -78,7 +167,7 @@ const Lotofacil = () => {
                                 <SimpleGrid p={4} columns={5} spacing={5}>
                                     <CheckboxGroup colorScheme="purple" >
                                     {resultado_fixar.map((item, index) => (
-                                        <Checkbox key={index} name="resultado" value={item} onChange={formik.handleChange}>
+                                        <Checkbox key={index} name="resultado" value={item} onChange={(e)=>onResultadoChange(e)}>
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -113,7 +202,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={5} spacing={5}>
                                     {resultado_fixar.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green">
+                                        <Checkbox key={index} colorScheme="green" name="fixarNumeros" value={item} onChange={(e)=>onFixarNumerosChange(e)}>
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -147,7 +236,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={2} spacing={5}>
                                     {soma.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green">
+                                        <Checkbox key={index} colorScheme="green" name="soma" value={item} onChange={(e)=>onSomaChange(e)}>
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -181,7 +270,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {linha.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green">
+                                        <Checkbox key={index} colorScheme="green" name="linha" value={item} onChange={(e)=>onLinhaChange(e)}>
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -215,7 +304,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {coluna.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green">
+                                        <Checkbox key={index} colorScheme="green" name="coluna" value={item} onChange={(e)=>onColunaChange(e)}>
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -249,7 +338,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {par_impar.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green">
+                                        <Checkbox key={index} colorScheme="green" name="par" value={item} onChange={(e)=>onParImparChange(e)}>
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -283,7 +372,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {repetido.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green">
+                                        <Checkbox key={index} colorScheme="green" name="repetido" value={item} onChange={(e)=>onRepetidoChange(e)}>
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -317,7 +406,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {primo_cruz.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green">
+                                        <Checkbox key={index} colorScheme="green" name="primo" value={item} onChange={(e)=>onPrimoChange(e)}>
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -351,7 +440,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {primo_cruz.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green">
+                                        <Checkbox key={index} colorScheme="green" name="cruz" value={item} onChange={(e)=>onCruzChange(e)}>
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -385,7 +474,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {fibonacci.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green">
+                                        <Checkbox key={index} colorScheme="green" name="fibonacci" value={item} onChange={(e)=>onFibonacciChange(e)}>
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -419,7 +508,7 @@ const Lotofacil = () => {
                             >
                                 <SimpleGrid p={4} columns={3} spacing={5}>
                                     {xis.map((item, index) => (
-                                        <Checkbox key={index} colorScheme="green">
+                                        <Checkbox key={index} colorScheme="green" name="xis" value={item} onChange={(e)=>onXisChange(e)}>
                                             {item}
                                         </Checkbox>
                                     ))}
@@ -430,15 +519,17 @@ const Lotofacil = () => {
                 </Flex>
 
                 <Flex justify="center" mt={25} mb={5}>
-                    <Button type="submit"> Gerar combinações</Button>
+                    <Button onClick={sendData}> Gerar combinações</Button>
+                </Flex>  
+
+                <Flex justify="center">
+                    <Box w="950px" h={200} border="1px" borderColor="#76225e">
+
+                    </Box>
                 </Flex>
 
-
-                </form>
             </Box>                      
-            
-        </Flex>
-        
+        </Flex>  
     )
 }
 

@@ -1,5 +1,5 @@
 import Layout from '../components/Layout'
-import Lotofacil from '../components/Lotofacil2'
+import Lotofacil from '../components/Lotofacil'
 
 export default function Home(data) {
   return (
